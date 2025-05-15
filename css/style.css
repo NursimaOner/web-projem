@@ -20,4 +20,78 @@ body {
     transform: scale(1.05);
 }
 
+/* Başlıklar */
+h1, h2 {
+  color: #004080;
+  font-weight: 700;
+}
+
+/* Kartlar */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #ddd;
+}
+
+/* Navbar aktif link efekti */
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+
+/* Navbar Arka Planı Mor */
+.bg-purple {
+  background-color: #6a1b9a !important; /* Mor renk */
+}
+
+/* Navbar Menüsü Üzerine Gelince Renk Değişimi */
+.nav-link:hover {
+  color: #ffeb3b !important;
+  transition: 0.3s;
+}
+
+/* Navbar sabit kalacak (sayfa kaymaz) */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* Mobilde navbar açılırken ikonlar */
+.navbar-toggler-icon {
+  background-color: white;
+}
+
+/* Menüdeki ikon boyutları */
+.nav-link i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+/* Logo boyutlandırma */
+.navbar-brand img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Navbar'daki menü yazı tipi */
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Mobilde navbar açıldığında menü genişliği */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
 
