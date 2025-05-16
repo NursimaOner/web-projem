@@ -4,7 +4,7 @@ body {
 }
 
 .hero {
-    background-image: url('C:/wamp64/www/web-projem/images/bg-hero.jpg');
+    background-image: url('../images/bg-hero.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -54,7 +54,10 @@ footer {
   color: #ffeb3b !important;
   transition: 0.3s;
 }
-
+/* (0.3 saniye boyunca) */
+.btn {
+  transition: all 0.3s ease;
+}
 /* Navbar sabit kalacak (sayfa kaymaz) */
 .navbar {
   position: fixed;
@@ -94,4 +97,8 @@ footer {
     text-align: center;
   }
 }
+body {
+  padding-top: 100px; /* Navbar yüksekliğini dengele */
+}
+
 
