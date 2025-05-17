@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mersin Tanıtım</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome (isteğe bağlı ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Özel Stil -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple fixed-top">
+  <div class="container">
+    <!-- Logo Kısmı -->
+    <a class="navbar-brand" href="index.html">
+      <img src="images/nur.jpg" alt="Logo"> <!-- Buraya logo tasarlayıp ekleyeceğim unutma -->
+    </a>
+    <!-- Menü Toggle Button (Mobilde gösterilecek) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Menü Listesi -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html">
+            <i class="bi bi-person"></i> Özgeçmiş
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sehrim.html">
+            <i class="bi bi-house-door"></i> Şehrim
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mirasimiz.html">
+            <i class="bi bi-archive"></i> Mirasımız
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="takimimiz.html">
+            <i class="bi bi-trophy"></i> Takımımız
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ilgi-alanim.html">
+            <i class="bi bi-heart"></i> İlgi Alanlarım
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">
+            <i class="bi bi-person-lock"></i> Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="iletisim.html">
+            <i class="bi bi-envelope"></i> İletişim
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Şehir Bilgileri -->
+     <section class="container my-5">
+    <h1 class="text-center">Mersin</h1>
+    <p class="lead text-center">Akdeniz'in incisi Mersin; tarihi, doğası ve lezzetli yemekleriyle öne çıkan bir şehirdir. Mersin 2025 nüfusu, tahmini verilere göre 1.971.650'dir.</p>
+     </section>
+
+  <!-- Slider -->
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+         <div class="carousel-item">
+        <a href="#sahil">
+          <img src="images/mersin-sahil.jpg" class="d-block w-100 slider-img" alt="Sahil">
+        </a>
+      </div>
+
+      <div class="carousel-item active">
+        <a href="#kizkalesi">
+          <img src="images/kizkalesi.jpg" class="d-block w-100 slider-img" alt="Kızkalesi">
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="#marina">
+          <img src="images/marina.jpg" class="d-block w-100 slider-img" alt="mersin marina">
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="#tantuni">
+          <img src="images/tantuni.jpg" class="d-block w-100 slider-img" alt="Tantuni">
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="#cennet-cehennem">
+          <img src="images/cennet-cehennem.jpg" class="d-block w-100 slider-img" alt="Cennet Cehennem">
+        </a>
+
+      </div>
+      <div class="carousel-item">
+        <a href="#tarsus-selale">
+          <img src="images/tarsus-selale.jpg" class="d-block w-100 slider-img" alt="Tarsus Şelale">
+        </a>
+
+      </div>
+      <div class="carousel-item">
+        <a href="#kırkkasık-bedesteni">
+          <img src="images/kırkkasık-bedesteni.jpg" class="d-block w-100 slider-img" alt="kırkkasık-bedesteni">
+        </a>
+
+      </div>
+      <div class="carousel-item">
+        <a href="#sahmaran">
+          <img src="images/sahmaran.jpg" class="d-block w-100 slider-img" alt="sahmaran">
+        </a>
+        
+      </div>
+      <div class="carousel-item">
+        <a href="#alahan-manastırı">
+          <img src="images/alahan-manastırı.jpg" class="d-block w-100 slider-img" alt="alahan-manastırı">
+        </a>
+      </div>
+    </div>
+    
+
+    <!-- Slider Kontrollerim -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+ 
+   <section id="sahil" class="container my-5">
+    <h2>Mersin Sahilleri</h2>
+    <p>Uzun sahil yürüyüş yolları,palmiye ağaçları, bisiklet parkurları, kumsalları ve sıcacık hacasıyla Mersin sahilleri dinlenmek için idealdir.</p>
+  </section>
+
+  <section id="kizkalesi" class="container my-5">
+    <h2>Kızkalesi</h2>
+    <p>Kızkalesi, denizin ortasında bulunan tarihi bir kaledir. Hem manzarası hem de tarihiyle ilgi çeker.</p>
+  </section>
+  
+  <section id="marina" class="container my-5">
+    <h2>Marina</h2>
+    <p>Mersin Marina, deniz kenarında alışveriş, yeme içme ve sosyal etkinliklerin bir arada bulunduğu, şehrin en modern ve canlı yaşam alanlarından biridir.</p>
+  </section>
+
+  <section id="tantuni" class="container my-5">
+    <h2>Tantuni</h2>
+    <p>Mersin’e özgü et veya tavukla yapılan, ince lavaşa sarılan büyüleyici bir sokak lezzetidir.</p>
+  </section> 
+
+  <section id="cennet-cehennem" class="container my-5">
+    <h2>Cennet-Cehennem Obrukları</h2>
+    <p>Mersin’in Silifke ilçesinde yer alan bu doğal oluşumlar, hem mitolojik hikayeleri hem de doğasıyla ilgi çeker.</p>
+  </section>
+  <section id="tarsus-selale" class="container my-5">
+    <h2>Tarsus Şelale</h2>
+    <p>Tarsus Şelalesi, doğal güzelliği ve serin havasıyla Mersin'in en çok ziyaret edilen doğa harikalarından biridir.</p>
+  </section>
+  <section id="kırkkasık-bedesteni" class="container my-5">
+    <h2>Kırkkaşık Bedesteni</h2>
+    <p>Kırkkaşık Bedesteni, Osmanlı dönemine ait mimarisiyle Tarsus’un tarihi dokusunu yansıtan, geçmişte ticaretin kalbinin attığı önemli bir çarşıdır.</p>
+  </section>
+   <section id="sahmaran" class="container my-5">
+    <h2>Şahmaran</h2>
+    <p>Tarsus Şahmaran efsanesi, Anadolu'nun en eski ve etkileyici halk hikayelerinden biridir. 
+    Şahmaran, yarı insan yarı yılan olan bilge ve koruyucu bir varlık olarak anlatılır. 
+    Efsaneye göre, Şahmaran bilgeliği ve iyiliğiyle tanınır, ona zarar verenlere karşı adalet sağlar. 
+    Tarsus’ta yaşayan halk, Şahmaran’ı hem mitolojik bir figür hem de kültürel miras olarak benimsemiştir.</p>
+  </section>
+   <section id="alahan-manastırı" class="container my-5">
+    <h2>Alahan Manastırı</h2>
+    <p>Alahan Manastırı, Mersin’in Mut ilçesinde Toros Dağları’nın eteklerinde yer alan, 5. yüzyıla tarihlenen önemli bir erken Hristiyanlık dönemi yapısıdır.</p>
+  </section>
+  <section class="container my-5">
+    <h2>Şehrin Hayatımdaki Yeri</h2>
+    <p>Mersin çocukluğumun ve güzel anılarımın geçtiği şehir. Yaşam enerjinizi yükseltecek ayrı bir gezegen. Sahilde yürümek, tantuni yemek her zaman özel hissettiriyor.</p>
+  </section>
+
+  <section class="container my-5">
+    <h2>Kişisel Yorumlarım</h2>
+    <p>Mersin'in insanı sıcak, doğası huzurlu, yemekleri ise efsane. Herkesin mutlaka görmesi gereken bir şehir.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Nursima Web Sitesi</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
