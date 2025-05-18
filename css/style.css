@@ -141,5 +141,10 @@ h2 {
   object-fit: cover;
 }
 
+/* Mirasımız Sayfası */
+.text-justify {
+    text-align: justify;
+}
+
 
 
