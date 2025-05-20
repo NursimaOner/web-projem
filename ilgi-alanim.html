@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Font Awesome (isteğe bağlı ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>İlgi Alanım – Kitaplar</title>
+  <link rel="stylesheet" href="style.css">
+  
+   
+</head>
+<body>
+  <main class="kitap-container">
+    <h1>İlgi Alanım: Kitap Okumak</h1>
+    <div id="kitaplar" class="kitap-listesi"></div>
+  </main>
+
+  <script>
+    const kitaplarDiv = document.getElementById('kitaplar');
+
+    fetch('https://openlibrary.org/search.json?q=kitap')
+      .then(response => response.json())
+      .then(data => {
+        const books = data.docs.slice(0, 10); // İlk 10 kitabı göster
+        books.forEach(book => {
+          const coverId = book.cover_i;
+          const title = book.title;
+          const author = book.author_name ? book.author_name[0] : 'Bilinmiyor';
+          const year = book.first_publish_year || 'Bilinmiyor';
+
+          const bookDiv = document.createElement('div');
+          bookDiv.className = 'kitap-karti';
+          bookDiv.innerHTML = `
+            <img src="https://covers.openlibrary.org/b/id/${coverId}-M.jpg" alt="${title}" onerror="this.src='images/default-book.jpg'">
+            <h3>${title}</h3>
+            <p>Yazar: ${author}</p>
+            <p>İlk Yayın Yılı: ${year}</p>
+          `;
+          kitaplarDiv.appendChild(bookDiv);
+        });
+      })
+      .catch(error => {
+        kitaplarDiv.innerHTML = '<p>Kitap verileri alınamadı.</p>';
+        console.error('Hata:', error);
+      });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

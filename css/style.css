@@ -11,7 +11,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
 .card {
     transition: transform 0.3s;
 }
@@ -42,7 +41,6 @@ footer {
 .nav-link:hover {
   color: #ffc107 !important;
 }
-
 
 /* Navbar Arka Planı Mor */
 .bg-purple {
@@ -146,7 +144,6 @@ h2 {
     text-align: justify;
 }
 
-
 /*Takimimiz sayfası*/
 body {
   font-family: Arial, sans-serif;
@@ -198,4 +195,49 @@ footer {
   color: #2e3b55;
   margin-top: 20px;
 }
+
+/* İlgi Alanlarım Sayfası */
+.kitap-container {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.kitap-listesi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.kitap-karti {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 200px;
+}
+
+.kitap-karti img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.kitap-karti h3 {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  color: #333;
+}
+
+.kitap-karti p {
+  font-size: 0.9rem;
+  color: #666;
+}
+body {
+  padding-top: 100px;
+}
+
 
