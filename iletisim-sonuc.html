@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>İletişim Formu Sonuç</title>
+  
+   <!-- Özel Stil -->
+    <link rel="stylesheet" href="css/style.css">
+
+  <!-- Bootstrap CSS (Opsiyonel) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+<!-- Bootstrap Icons (ikonlar için) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  
+ 
+</head>
+<body>
+
+ <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6a1b9a;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/nur.jpg" alt="Logo" style="width:40px; height:40px; border-radius:50%; margin-right:10px;">
+      
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html"><i class="bi bi-person"></i> Özgeçmiş</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sehrim.html"><i class="bi bi-house-door"></i> Şehrim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mirasimiz.html"><i class="bi bi-archive"></i> Mirasımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="takimimiz.html"><i class="bi bi-trophy"></i> Takımımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ilgi-alanim.html"><i class="bi bi-heart"></i> İlgi Alanlarım</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html"><i class="bi bi-person-lock"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="iletisim.html"><i class="bi bi-envelope"></i> İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Gönderilen İletişim Bilgileri</h2>
+  
+  <div id="sonuc"></div>
+  
+  <button onclick="geriDon()" class="btn btn-primary mt-3">Geri Dön</button>
+</div>
+
+<script>
+  // LocalStorage'dan veriyi al
+  const data = localStorage.getItem('iletisimFormData');
+  const sonucDiv = document.getElementById('sonuc');
+  
+  if (!data) {
+    sonucDiv.innerHTML = '<p>Gösterilecek veri bulunamadı.</p>';
+  } else {
+    const form = JSON.parse(data);
+    
+    // İlgi alanları dizisi stringe çevrilir
+    const ilgiAlanlariStr = form.ilgiAlanlari.length ? form.ilgiAlanlari.join(', ') : 'Seçilmemiş';
+    
+    sonucDiv.innerHTML = `
+      <p><span class="label">İsim:</span> ${form.isim}</p>
+      <p><span class="label">Soyisim:</span> ${form.soyisim}</p>
+      <p><span class="label">E-posta:</span> ${form.email}</p>
+      <p><span class="label">Telefon:</span> ${form.telefon}</p>
+      <p><span class="label">Cinsiyet:</span> ${form.cinsiyet}</p>
+      <p><span class="label">İlgi Alanları:</span> ${ilgiAlanlariStr}</p>
+      <p><span class="label">Mesaj:</span><br />${form.mesaj.replace(/\n/g, '<br />')}</p>
+    `;
+  }
+  
+  function geriDon() {
+    window.location.href = 'iletisim.html'; // Form sayfasına geri döner
+  }
+</script>
+
+</body>
+</html>

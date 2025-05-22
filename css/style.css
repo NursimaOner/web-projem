@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #A9A9A9;
+    padding-top: 60px; /* Navbar yüksekliğini dengele */
 }
 
 .hero {
@@ -37,71 +38,55 @@ footer {
   color: #ddd;
 }
 
-/* Navbar aktif link efekti */
-.nav-link:hover {
-  color: #ffc107 !important;
-}
-
-/* Navbar Arka Planı Mor */
-.bg-purple {
-  background-color: #6a1b9a !important; /* Mor renk */
-}
-
-/* Navbar Menüsü Üzerine Gelince Renk Değişimi */
-.nav-link:hover {
-  color: #ffeb3b !important;
-  transition: 0.3s;
-}
-/* (0.3 saniye boyunca) */
-.btn {
-  transition: all 0.3s ease;
-}
-/* Navbar sabit kalacak (sayfa kaymaz) */
 .navbar {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 999;
+  background-color: #670f8a !important;
+  padding: 0.5rem 1rem; /* Navbar iç dolgu */
 }
 
-/* Mobilde navbar açılırken ikonlar */
-.navbar-toggler-icon {
-  background-color: white;
-}
-
-/* Menüdeki ikon boyutları */
-.nav-link i {
-  font-size: 1.2rem;
-  margin-right: 8px;
-}
-
-/* Logo boyutlandırma */
 .navbar-brand img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
-/* Navbar'daki menü yazı tipi */
 .navbar-nav .nav-link {
   font-size: 1rem;
   font-family: 'Arial', sans-serif;
+  color: rgb(6, 4, 134); /* Linklerin beyaz olması */
+  transition: color 0.3s ease;
 }
 
-/* Mobilde navbar açıldığında menü genişliği */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #ffeb3b !important; /* Aktif ve hover rengi */
+}
+
+.navbar-toggler-icon {
+  background-color: rgb(134, 29, 175);
+}
+
 @media (max-width: 991px) {
   .navbar-nav {
     text-align: center;
   }
 }
+
+/* Body padding-top tek ve kesin olsun: */
 body {
-  padding-top: 60px; /* Navbar yüksekliğini dengele */
+  padding-top: 60px; /* navbar yüksekliği kadar */
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
+
 /*sehrim.html*/
 body {
-  padding-top: 80px;
   font-family: 'Arial', sans-serif;
+  padding-top: 60px;
 }
 
 .carousel-item img {
@@ -127,6 +112,7 @@ h2 {
   height: 50px;
   border-radius: 50%;
 }
+
 /*slider boyutandırma*/
 
 .carousel-item {
@@ -185,6 +171,7 @@ footer {
   color: white;
   margin-top: 40px;
 }
+
 /*Başarılar bölümü*/
 .team ul {
   list-style-type: square;
@@ -236,8 +223,3 @@ footer {
   font-size: 0.9rem;
   color: #666;
 }
-body {
-  padding-top: 100px;
-}
-
-

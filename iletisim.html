@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>İletişim Sayfası</title>
+  
+   <!-- Özel Stil -->
+    <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons (ikonlar için) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ 
+  <!-- Vue.js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+   
+  
+ 
+</head>
+<body>
+   
+     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6a1b9a;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/nur.jpg" alt="Logo" style="width:40px; height:40px; border-radius:50%; margin-right:10px;">
+      
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html"><i class="bi bi-person"></i> Özgeçmiş</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sehrim.html"><i class="bi bi-house-door"></i> Şehrim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mirasimiz.html"><i class="bi bi-archive"></i> Mirasımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="takimimiz.html"><i class="bi bi-trophy"></i> Takımımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ilgi-alanim.html"><i class="bi bi-heart"></i> İlgi Alanlarım</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html"><i class="bi bi-person-lock"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="iletisim.html"><i class="bi bi-envelope"></i> İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="app" class="container">
+
+  <h2>İletişim Formu</h2>
+
+
+  <form @submit.prevent="submitForm">
+    <div class="mb-3 my-5">
+      <label for="isim" class="form-label">İsim *</label>
+      <input type="text" id="isim" v-model="form.isim" class="form-control" />
+      <div class="error" v-if="errors.isim">{{ errors.isim }}</div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="soyisim" class="form-label">Soyisim *</label>
+      <input type="text" id="soyisim" v-model="form.soyisim" class="form-control" />
+      <div class="error" v-if="errors.soyisim">{{ errors.soyisim }}</div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">E-posta *</label>
+      <input type="text" id="email" v-model="form.email" class="form-control" />
+      <div class="error" v-if="errors.email">{{ errors.email }}</div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="telefon" class="form-label">Telefon *</label>
+      <input type="text" id="telefon" v-model="form.telefon" class="form-control" />
+      <div class="error" v-if="errors.telefon">{{ errors.telefon }}</div>
+    </div>
+    
+    <div class="mb-3">
+      <label class="form-label">Cinsiyet *</label><br />
+      <div>
+        <input type="radio" id="cinsiyet-erkek" value="Erkek" v-model="form.cinsiyet" />
+        <label for="cinsiyet-erkek">Erkek</label>
+      </div>
+      <div>
+        <input type="radio" id="cinsiyet-kadin" value="Kadın" v-model="form.cinsiyet" />
+        <label for="cinsiyet-kadin">Kadın</label>
+      </div>
+      <div class="error" v-if="errors.cinsiyet">{{ errors.cinsiyet }}</div>
+    </div>
+    
+    <div class="mb-3">
+      <label class="form-label">İlgi Alanları</label><br />
+      <div><input type="checkbox" id="alan1" value="Kitap" v-model="form.ilgiAlanlari" /> <label for="alan1">Kitap</label></div>
+      <div><input type="checkbox" id="alan2" value="Spor" v-model="form.ilgiAlanlari" /> <label for="alan2">Spor</label></div>
+      <div><input type="checkbox" id="alan3" value="Müzik" v-model="form.ilgiAlanlari" /> <label for="alan3">Müzik</label></div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="mesaj" class="form-label">Mesaj *</label>
+      <textarea id="mesaj" v-model="form.mesaj" class="form-control" rows="4"></textarea>
+      <div class="error" v-if="errors.mesaj">{{ errors.mesaj }}</div>
+    </div>
+    
+    <button type="button" class="btn btn-secondary me-2" @click="temizle">Temizle</button>
+    <button type="button" class="btn btn-warning me-2" @click="validateOnly">Kontrol Et</button>
+    <button type="submit" class="btn btn-primary">Gönder</button>
+  </form>
+</div>
+
+<script>
+  const { createApp } = Vue;
+  
+  createApp({
+    data() {
+      return {
+        form: {
+          isim: '',
+          soyisim: '',
+          email: '',
+          telefon: '',
+          cinsiyet: '',
+          ilgiAlanlari: [],
+          mesaj: ''
+        },
+        errors: {}
+      }
+    },
+    methods: {
+      validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      },
+      validateOnly() {
+        this.errors = {};
+        if (!this.form.isim) this.errors.isim = 'İsim boş bırakılamaz.';
+        if (!this.form.soyisim) this.errors.soyisim = 'Soyisim boş bırakılamaz.';
+        if (!this.form.email) this.errors.email = 'E-posta boş bırakılamaz.';
+        else if (!this.validateEmail(this.form.email)) this.errors.email = 'Geçerli bir e-posta giriniz.';
+        if (!this.form.telefon) this.errors.telefon = 'Telefon boş bırakılamaz.';
+        else if (!/^\d+$/.test(this.form.telefon)) this.errors.telefon = 'Telefon sadece rakamlardan oluşmalı.';
+        if (!this.form.cinsiyet) this.errors.cinsiyet = 'Cinsiyet seçmelisiniz.';
+        if (!this.form.mesaj) this.errors.mesaj = 'Mesaj boş bırakılamaz.';
+        
+        if (Object.keys(this.errors).length === 0) {
+          alert('Formda hata bulunamadı. Her şey doğru görünüyor!');
+        }
+      },
+      temizle() {
+        this.form = {
+          isim: '',
+          soyisim: '',
+          email: '',
+          telefon: '',
+          cinsiyet: '',
+          ilgiAlanlari: [],
+          mesaj: ''
+        };
+        this.errors = {};
+      },
+      submitForm() {
+        this.errors = {};
+        // Aynı validateOnly kontrolü:
+        if (!this.form.isim) this.errors.isim = 'İsim boş bırakılamaz.';
+        if (!this.form.soyisim) this.errors.soyisim = 'Soyisim boş bırakılamaz.';
+        if (!this.form.email) this.errors.email = 'E-posta boş bırakılamaz.';
+        else if (!this.validateEmail(this.form.email)) this.errors.email = 'Geçerli bir e-posta giriniz.';
+        if (!this.form.telefon) this.errors.telefon = 'Telefon boş bırakılamaz.';
+        else if (!/^\d+$/.test(this.form.telefon)) this.errors.telefon = 'Telefon sadece rakamlardan oluşmalı.';
+        if (!this.form.cinsiyet) this.errors.cinsiyet = 'Cinsiyet seçmelisiniz.';
+        if (!this.form.mesaj) this.errors.mesaj = 'Mesaj boş bırakılamaz.';
+        
+        if (Object.keys(this.errors).length === 0) {
+          // Form geçerli, başka sayfaya yönlendireceğiz
+          // form verilerini URL ile yollayabiliriz (GET ile) veya localStorage ile
+          // Burada örnek olarak localStorage kullanalım:
+          localStorage.setItem('iletisimFormData', JSON.stringify(this.form));
+          window.location.href = 'iletisim-sonuc.html';
+        }
+      }
+    }
+  }).mount('#app');
+
+</script>
+    <!-- Bootstrap JS Bundle (JS ve Popper dahil) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
