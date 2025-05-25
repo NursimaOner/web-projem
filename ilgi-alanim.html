@@ -4,19 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+     <link rel="stylesheet" href="style.css">
+
    <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-   <!-- Font Awesome (isteğe bağlı ikonlar için) -->
+  <!-- Bootstrap Icons (ikonlar için) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Font Awesome (herkese açık CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
   <title>İlgi Alanım – Kitaplar</title>
-  <link rel="stylesheet" href="style.css">
-  
-   
+
 </head>
 <body>
-  <main class="kitap-container">
+    
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6a1b9a;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/nur.jpg" alt="Logo" style="width:40px; height:40px; border-radius:50%; margin-right:10px;">
+      
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html"><i class="bi bi-person"></i> Özgeçmiş</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sehrim.html"><i class="bi bi-house-door"></i> Şehrim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mirasimiz.html"><i class="bi bi-archive"></i> Mirasımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="takimimiz.html"><i class="bi bi-trophy"></i> Takımımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ilgi-alanim.html"><i class="bi bi-heart"></i> İlgi Alanlarım</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html"><i class="bi bi-person-lock"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="iletisim.html"><i class="bi bi-envelope"></i> İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+     
+
+  <main class="kitap-container my-5">
     <h1>İlgi Alanım: Kitap Okumak</h1>
     <div id="kitaplar" class="kitap-listesi"></div>
   </main>
@@ -53,6 +98,11 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Nursima Web Sitesi</p>
+    </footer>
 
 </body>
 </html>

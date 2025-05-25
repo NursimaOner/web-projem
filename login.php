@@ -9,7 +9,18 @@ $valid_password = "b241210052";
 
 // Kontrol
 if ($email === $valid_email && $password === $valid_password) {
-    echo "<h2>Hoşgeldiniz $password</h2>";
+    echo "<!DOCTYPE html>
+    <html lang='tr'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Giriş Başarılı</title>
+        <link rel='stylesheet' href='style.css'>
+    </head>
+    <body>
+        <h2>Hoşgeldiniz $password</h2>
+        <a href='index.html' class='geri-don-btn'>Ana Sayfaya Dön</a>
+    </body>
+    </html>";
 } else {
     // Hatalıysa login sayfasına dön
     header("Location: login.html");

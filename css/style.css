@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #A9A9A9;
+    background-color: #e9e7ea;
     padding-top: 60px; /* Navbar yüksekliğini dengele */
 }
 
@@ -57,7 +57,7 @@ footer {
 .navbar-nav .nav-link {
   font-size: 1rem;
   font-family: 'Arial', sans-serif;
-  color: rgb(6, 4, 134); /* Linklerin beyaz olması */
+  color: rgb(20, 17, 205); /* Linklerin lacivert olması */
   transition: color 0.3s ease;
 }
 
@@ -222,4 +222,20 @@ footer {
 .kitap-karti p {
   font-size: 0.9rem;
   color: #666;
+}
+
+.geri-don-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6a1b9a;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.geri-don-btn:hover {
+  background-color: #8e24aa;
 }
